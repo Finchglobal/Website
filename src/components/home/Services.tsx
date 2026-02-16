@@ -36,7 +36,7 @@ import { ParallaxSection } from "@/components/ui/ParallaxSection";
 
 export function Services() {
     return (
-        <section id="services" className="py-24 md:py-32 relative overflow-hidden bg-background/50">
+        <section id="services" className="py-24 md:py-32 relative overflow-hidden bg-transparent">
             {/* Background Parallax */}
             <div className="absolute inset-0 -z-10">
                 <ParallaxSection speed={-30} className="absolute inset-0 h-full w-full">

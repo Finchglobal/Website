@@ -11,12 +11,8 @@ export function ProjectContent({ project }: { project: Project }) {
     if (!project) return null;
 
     return (
-        <main className="min-h-screen bg-background relative overflow-hidden">
-            {/* Background Decor */}
-            <div className="fixed inset-0 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-30 mix-blend-screen" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] opacity-30" />
-            </div>
+        <main className="min-h-screen bg-transparent relative overflow-hidden">
+            {/* Background Decor Removed - using global LiveSpaceBackground */}
 
             <div className="container px-4 py-24 relative z-10">
                 <Link

@@ -26,7 +26,7 @@ export function Testimonials() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-card border border-border rounded-2xl p-8 md:p-10 relative"
+                            className="bg-card border border-border hover:border-primary/50 transition-colors rounded-2xl p-8 md:p-10 relative group"
                         >
                             <Quote className="w-10 h-10 text-primary/20 absolute top-8 right-8" />
 

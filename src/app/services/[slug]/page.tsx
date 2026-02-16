@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, CheckCircle2, ArrowRight } from "lucide-react";
 import { servicesData } from "@/lib/servicesData";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/layout/Navbar";
+
 
 // Generate static params for all services
 export function generateStaticParams() {
@@ -25,8 +25,8 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
     const Icon = service.icon;
 
     return (
-        <main className="min-h-screen bg-background selection:bg-primary/20">
-            <Navbar />
+        <main className="min-h-screen bg-transparent selection:bg-primary/20">
+            {/* Navbar is in RootLayout */}
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">

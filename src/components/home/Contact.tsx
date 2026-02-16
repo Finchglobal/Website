@@ -52,11 +52,18 @@ export function Contact() {
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
                                 <div className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center shrink-0">
-                                    <span className="text-xl">📍</span>
+                                    <span className="text-xl">📅</span>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold">Headquarters</h4>
-                                    <p className="text-muted-foreground">123 Tech Avenue, Silicon Valley, CA</p>
+                                    <h4 className="font-bold mb-1">Book a Consultation</h4>
+                                    <a
+                                        href="https://calendar.app.google/vvSWoqkeFPaydRU38"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
+                                    >
+                                        Book Free 30-Min Call
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -101,7 +108,7 @@ export function Contact() {
                                     <label htmlFor="name" className="text-sm font-medium">Name</label>
                                     <input
                                         id="name" required
-                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                         placeholder="John Doe"
                                     />
                                 </div>
@@ -109,7 +116,7 @@ export function Contact() {
                                     <label htmlFor="email" className="text-sm font-medium">Email</label>
                                     <input
                                         id="email" type="email" required
-                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                         placeholder="john@company.com"
                                     />
                                 </div>
@@ -119,7 +126,7 @@ export function Contact() {
                                 <label htmlFor="service" className="text-sm font-medium">Service Interest</label>
                                 <select
                                     id="service"
-                                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none"
                                 >
                                     <option>UI/UX Design</option>
                                     <option>Web Development</option>
@@ -133,7 +140,7 @@ export function Contact() {
                                 <label htmlFor="message" className="text-sm font-medium">Message</label>
                                 <textarea
                                     id="message" required rows={4}
-                                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                                     placeholder="Tell us about your project..."
                                 />
                             </div>

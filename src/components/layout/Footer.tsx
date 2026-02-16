@@ -7,7 +7,7 @@ import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
     return (
-        <footer className="bg-background border-t border-border pt-16 pb-8">
+        <footer className="bg-card border-t border-border pt-16 pb-8">
             <div className="container px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
@@ -22,12 +22,6 @@ export function Footer() {
                         <div className="flex gap-4 pt-2">
                             <Link href="#" className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors">
                                 <Linkedin className="w-4 h-4" />
-                            </Link>
-                            <Link href="#" className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors">
-                                <Twitter className="w-4 h-4" />
-                            </Link>
-                            <Link href="#" className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors">
-                                <Instagram className="w-4 h-4" />
                             </Link>
                         </div>
                     </div>

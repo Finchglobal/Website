@@ -68,8 +68,8 @@
     --foreground: #fafafa;
     /* Zinc 50 */
 
-    --card: #18181b;
-    /* Zinc 900 */
+    --card: rgba(24, 24, 27, 0.4);
+    /* Zinc 900 with opacity */
     --card-foreground: #fafafa;
 
     --popover: #09090b;
@@ -79,11 +79,11 @@
     /* Blue 500 - Finch Blue */
     --primary-foreground: #fafafa;
 
-    --secondary: #27272a;
-    /* Zinc 800 */
+    --secondary: rgba(39, 39, 42, 0.5);
+    /* Zinc 800 with opacity */
     --secondary-foreground: #fafafa;
 
-    --muted: #27272a;
+    --muted: rgba(39, 39, 42, 0.5);
     --muted-foreground: #a1a1aa;
     /* Zinc 400 */
 
@@ -99,12 +99,22 @@
     --ring: #3b82f6;
 
     --radius: 0.5rem;
+    --glass-border: rgba(255, 255, 255, 0.08);
   }
+}
+
+/* Glassmorphism Utilities */
+@utility glass-panel {
+  @apply bg-card/40 backdrop-blur-md border border-[var(--glass-border)];
+}
+
+@utility glass-card {
+  @apply bg-card/30 backdrop-blur-sm border border-[var(--glass-border)] hover:bg-card/50 transition-colors duration-300;
 }
 
 /* Global Reset */
 body {
-  background-color: var(--background);
+  background-color: transparent;
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
   @apply antialiased;

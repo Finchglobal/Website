@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { SmoothScrolling } from "@/components/ui/SmoothScrolling";
+import { LiveSpaceBackground } from "@/components/home/LiveSpaceBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Finch Global Agency",
     images: [
       {
-        url: "/og-image.jpg", // We'll need to make sure this exists or use a placeholder
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Finch Global Agency",
@@ -71,8 +73,10 @@ export default function RootLayout({
           outfit.variable
         )}
       >
+        <LiveSpaceBackground />
         <SmoothScrolling>
           <CustomCursor />
+          <Navbar />
           {children}
         </SmoothScrolling>
         <Footer />
