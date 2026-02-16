@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 
 const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "Process", href: "#process" },
-    { name: "About", href: "#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Work", href: "/#work" },
+    { name: "Process", href: "/#process" },
+    { name: "About", href: "/#about" },
 ];
 
 export function Navbar() {
@@ -56,10 +56,12 @@ export function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <Button className="group">
-                        Start Project
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href="/#contact">
+                        <Button className="group">
+                            Start Project
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -93,9 +95,11 @@ export function Navbar() {
                                 </Link>
                             ))}
                             <div className="mt-auto pb-24">
-                                <Button className="w-full text-lg py-6" size="lg">
-                                    Start Project <ArrowRight className="ml-2" />
-                                </Button>
+                                <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                    <Button className="w-full text-lg py-6" size="lg">
+                                        Start Project <ArrowRight className="ml-2" />
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </motion.div>

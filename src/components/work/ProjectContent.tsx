@@ -132,9 +132,11 @@ export function ProjectContent({ project }: { project: Project }) {
                             </a>
                         )}
 
-                        <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-medium transition-colors">
-                            Start a Project Like This
-                        </button>
+                        <Link href="/#contact">
+                            <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-medium transition-colors">
+                                Start a Project Like This
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

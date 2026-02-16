@@ -65,9 +65,11 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
                             </p>
 
                             <div className="pt-8">
-                                <Button size="lg" className="h-12 px-8 text-base">
-                                    {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
-                                </Button>
+                                <Link href="/#contact">
+                                    <Button size="lg" className="h-12 px-8 text-base">
+                                        {service.cta} <ArrowRight className="ml-2 w-4 h-4" />
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
 

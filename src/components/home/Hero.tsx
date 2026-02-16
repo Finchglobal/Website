@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 
@@ -76,13 +77,17 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 pt-4"
                     >
-                        <Button size="lg" className="h-12 px-8 text-base">
-                            Start Your Project
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-12 px-8 text-base">
-                            View Our Work
-                        </Button>
+                        <Link href="/#contact">
+                            <Button size="lg" className="h-12 px-8 text-base w-full sm:w-auto">
+                                Start Your Project
+                                <ArrowRight className="ml-2 w-4 h-4" />
+                            </Button>
+                        </Link>
+                        <Link href="/#work">
+                            <Button size="lg" variant="outline" className="h-12 px-8 text-base w-full sm:w-auto">
+                                View Our Work
+                            </Button>
+                        </Link>
                     </motion.div>
 
                     {/* Trust Indicators */}

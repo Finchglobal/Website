@@ -61,19 +61,19 @@ export function Footer() {
                         <h4 className="font-bold mb-4">Company</h4>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li>
-                                <Link href="#about" className="relative group hover:text-foreground transition-colors inline-block">
+                                <Link href="/#about" className="relative group hover:text-foreground transition-colors inline-block">
                                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#FF0000] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#work" className="relative group hover:text-foreground transition-colors inline-block">
+                                <Link href="/#work" className="relative group hover:text-foreground transition-colors inline-block">
                                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#FF0000] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                                     Portfolio
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#process" className="relative group hover:text-foreground transition-colors inline-block">
+                                <Link href="/#process" className="relative group hover:text-foreground transition-colors inline-block">
                                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[#FF0000] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                                     Our Process
                                 </Link>
