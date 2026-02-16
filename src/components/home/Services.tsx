@@ -7,26 +7,31 @@ import { ServiceCard } from "./ServiceCard";
 const services = [
     {
         title: "UI/UX Design",
+        slug: "uiux",
         icon: PenTool,
         features: ["User Research (30+ hrs)", "Figma Mockups", "UX/UI Prototypes", "A/B Testing"],
     },
     {
         title: "Web Development",
+        slug: "webdev",
         icon: Code2,
         features: ["High-Conversion Interfaces", "Scalable Infrastructure", "Headless CMS", "Peak Performance"],
     },
     {
         title: "Digital Marketing",
+        slug: "marketing",
         icon: BarChart3,
         features: ["Social Media Strategy", "SEO Technical Audit", "Email Automation", "Analytics Dashboard"],
     },
     {
         title: "E-Commerce Solution",
+        slug: "ecommerce",
         icon: ShoppingBag,
         features: ["Commerce Strategy", "Revenue Optimization", "Conversion Optimization", "Inventory Intelligence"],
     },
     {
         title: "Strategy Refinements",
+        slug: "strategy",
         icon: LineChart,
         features: ["Business Audits", "Growth Roadmaps", "Competitor Analysis", "ROI Forecasting"],
     },
