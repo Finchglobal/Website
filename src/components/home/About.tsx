@@ -20,15 +20,15 @@ export function About() {
                             A collaboration of diverse minds
                         </p>
 
-                        <div className="flex flex-wrap justify-center items-center gap-x-4 md:gap-x-6 gap-y-2 md:gap-y-4 text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-foreground">
+                        <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-x-6 text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-foreground">
                             <span>Business Strategists</span>
-                            <span className="w-1.5 h-1.5 bg-[#FF0000] rounded-none inline-block" />
+                            <span className="w-0.5 h-8 md:w-1.5 md:h-1.5 bg-[#FF0000] rounded-none inline-block" />
                             <span>Digital Designers</span>
-                            <span className="w-1.5 h-1.5 bg-[#FF0000] rounded-none inline-block" />
+                            <span className="w-0.5 h-8 md:w-1.5 md:h-1.5 bg-[#FF0000] rounded-none inline-block" />
                             <span>UX Specialists</span>
-                            <span className="w-1.5 h-1.5 bg-[#FF0000] rounded-none inline-block" />
+                            <span className="w-0.5 h-8 md:w-1.5 md:h-1.5 bg-[#FF0000] rounded-none inline-block" />
                             <span>Industry Mentors</span>
-                            <span className="w-1.5 h-1.5 bg-[#FF0000] rounded-none inline-block" />
+                            <span className="w-0.5 h-8 md:w-1.5 md:h-1.5 bg-[#FF0000] rounded-none inline-block" />
                             <span>Software Engineers</span>
                         </div>
                     </div>
