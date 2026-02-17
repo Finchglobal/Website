@@ -8,13 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 
 export function Contact() {
-    // ----------------------------------------------------------------------
-    // STEP 1: Get your free Access Key from https://web3forms.com/
-    // STEP 2: Use your PRIMARY email (hello@philanthroforge.com) to get the key 
-    //         since the alias is blocking emails.
-    // STEP 3: Paste the key below.
-    // ----------------------------------------------------------------------
-    const ACCESS_KEY = "335f548d-f178-4b32-94f9-27b8f13c8ca3";
+    const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
     const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
 
