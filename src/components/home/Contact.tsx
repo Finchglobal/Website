@@ -8,6 +8,55 @@ import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 
 export function Contact() {
+    // ----------------------------------------------------------------------
+    // STEP 1: Get your free Access Key from https://web3forms.com/
+    // STEP 2: Use your PRIMARY email (hello@philanthroforge.com) to get the key 
+    //         since the alias is blocking emails.
+    // STEP 3: Paste the key below.
+    // ----------------------------------------------------------------------
+    const ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+
+    const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setFormState("sending");
+
+        const formData = new FormData(e.target as HTMLFormElement);
+        const data = Object.fromEntries(formData);
+
+        // Add the access key to the data
+        const payload = {
+            ...data,
+            access_key: ACCESS_KEY,
+        };
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setFormState("success");
+            } else {
+                console.error("Form submission failed:", result);
+                setFormState("error");
+                setTimeout(() => setFormState("idle"), 3000);
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setFormState("error");
+            setTimeout(() => setFormState("idle"), 3000);
+        }
+    };
+
     return (
         <section id="contact" className="py-24 md:py-32 bg-secondary/20 relative overflow-hidden">
             {/* Background Parallax */}
@@ -74,18 +123,29 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-lg relative overflow-hidden"
                     >
-                        <form
-                            action="https://formsubmit.co/hello@finchglobal.agency"
-                            method="POST"
-                            target="_blank"
-                            className="space-y-6 relative z-10"
-                        >
-                            {/* FormSubmit Configuration */}
-                            <input type="text" name="_honey" className="hidden" />
-                            <input type="hidden" name="_captcha" value="false" />
-                            <input type="hidden" name="_template" value="table" />
-                            <input type="hidden" name="_subject" value="New Enquiry from Finch Global Website" />
-                            {/* Removed _next redirect to allow seeing the activation/success page explicitly */}
+                        {formState === "success" ? (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-card z-20 text-center p-8 animate-in fade-in duration-300">
+                                <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 mb-4">
+                                    <CheckCircle2 className="w-8 h-8" />
+                                </div>
+                                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                                <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
+                                <Button
+                                    variant="outline"
+                                    className="mt-6"
+                                    onClick={() => setFormState("idle")}
+                                >
+                                    Send Another
+                                </Button>
+                            </div>
+                        ) : null}
+
+                        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                            {/* HoneyPot for Spam Prevention (Web3Forms uses 'botcheck' usually but _honey works too if configured, sticking to standard fields) */}
+                            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                            {/* Custom Subject */}
+                            <input type="hidden" name="subject" value="New Enquiry from Finch Global Website" />
+                            <input type="hidden" name="from_name" value="Finch Global Website" />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -133,8 +193,11 @@ export function Contact() {
                                 type="submit"
                                 size="lg"
                                 className="w-full group"
+                                disabled={formState === "sending"}
                             >
-                                Send Message <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                {formState === "sending" ? "Sending..." : (
+                                    <>Send Message <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
+                                )}
                             </Button>
                         </form>
                     </motion.div>
