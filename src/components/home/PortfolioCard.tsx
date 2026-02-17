@@ -42,6 +42,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
                                 src={project.image}
                                 alt={project.title}
                                 fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-2"
                             />
                         ) : (
