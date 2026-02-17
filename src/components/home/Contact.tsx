@@ -19,6 +19,13 @@ export function Contact() {
         const formData = new FormData(e.target as HTMLFormElement);
         const data = Object.fromEntries(formData);
 
+        if (!ACCESS_KEY) {
+            console.error("Missing Web3Forms Access Key. Please check your .env.local file.");
+            setFormState("error");
+            setTimeout(() => setFormState("idle"), 3000);
+            return;
+        }
+
         // Add the access key to the data
         const payload = {
             ...data,
