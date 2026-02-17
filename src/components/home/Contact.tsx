@@ -8,38 +8,6 @@ import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 
 export function Contact() {
-    const [formState, setFormState] = useState<"idle" | "sending" | "success" | "error">("idle");
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormState("sending");
-
-        const formData = new FormData(e.target as HTMLFormElement);
-
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/hello@finchglobal.agency", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(Object.fromEntries(formData))
-            });
-
-            if (response.ok) {
-                setFormState("success");
-            } else {
-                console.error("Form submission failed");
-                setFormState("error");
-                setTimeout(() => setFormState("idle"), 3000);
-            }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            setFormState("error");
-            setTimeout(() => setFormState("idle"), 3000);
-        }
-    };
-
     return (
         <section id="contact" className="py-24 md:py-32 bg-secondary/20 relative overflow-hidden">
             {/* Background Parallax */}
@@ -106,27 +74,18 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-lg relative overflow-hidden"
                     >
-                        {formState === "success" ? (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-card z-20 text-center p-8 animate-in fade-in duration-300">
-                                <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center text-green-500 mb-4">
-                                    <CheckCircle2 className="w-8 h-8" />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-                                <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
-                                <Button
-                                    variant="outline"
-                                    className="mt-6"
-                                    onClick={() => setFormState("idle")}
-                                >
-                                    Send Another
-                                </Button>
-                            </div>
-                        ) : null}
-
-                        <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                            {/* HoneyPot for Spam Prevention */}
+                        <form
+                            action="https://formsubmit.co/hello@finchglobal.agency"
+                            method="POST"
+                            target="_blank"
+                            className="space-y-6 relative z-10"
+                        >
+                            {/* FormSubmit Configuration */}
                             <input type="text" name="_honey" className="hidden" />
                             <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_subject" value="New Enquiry from Finch Global Website" />
+                            {/* Removed _next redirect to allow seeing the activation/success page explicitly */}
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
@@ -174,11 +133,8 @@ export function Contact() {
                                 type="submit"
                                 size="lg"
                                 className="w-full group"
-                                disabled={formState === "sending"}
                             >
-                                {formState === "sending" ? "Sending..." : (
-                                    <>Send Message <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" /></>
-                                )}
+                                Send Message <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </Button>
                         </form>
                     </motion.div>
