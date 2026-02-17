@@ -14,9 +14,31 @@ export function Contact() {
         e.preventDefault();
         setFormState("sending");
 
-        // Simulate EmailJS delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setFormState("success");
+        const formData = new FormData(e.target as HTMLFormElement);
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/hello@finchglobal.agency", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            });
+
+            if (response.ok) {
+                setFormState("success");
+            } else {
+                console.error("Form submission failed");
+                setFormState("error");
+                // Reset to idle after 3 seconds so they can try again if needed
+                setTimeout(() => setFormState("idle"), 3000);
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setFormState("error");
+            setTimeout(() => setFormState("idle"), 3000);
+        }
     };
 
     return (
@@ -103,11 +125,15 @@ export function Contact() {
                         ) : null}
 
                         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                            {/* HoneyPot for Spam Prevention */}
+                            <input type="text" name="_honey" className="hidden" />
+                            <input type="hidden" name="_captcha" value="false" />
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-sm font-medium">Name</label>
                                     <input
-                                        id="name" required
+                                        id="name" name="name" required
                                         className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                         placeholder="John Doe"
                                     />
@@ -115,7 +141,7 @@ export function Contact() {
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="text-sm font-medium">Email</label>
                                     <input
-                                        id="email" type="email" required
+                                        id="email" name="email" type="email" required
                                         className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                         placeholder="john@company.com"
                                     />
@@ -125,7 +151,7 @@ export function Contact() {
                             <div className="space-y-2">
                                 <label htmlFor="service" className="text-sm font-medium">Service Interest</label>
                                 <select
-                                    id="service"
+                                    id="service" name="service"
                                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none"
                                 >
                                     <option>UI/UX Design</option>
@@ -139,7 +165,7 @@ export function Contact() {
                             <div className="space-y-2">
                                 <label htmlFor="message" className="text-sm font-medium">Message</label>
                                 <textarea
-                                    id="message" required rows={4}
+                                    id="message" name="message" required rows={4}
                                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                                     placeholder="Tell us about your project..."
                                 />
