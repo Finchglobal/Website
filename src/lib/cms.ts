@@ -134,7 +134,7 @@ export const projects: Project[] = [
         service: "Creative Studio",
         client: "2Dots",
         roi: "Brand Identity",
-        image: "/projects/placeholder-1.png",
+        image: "/projects/twodots.png",
         description: "Minimalist and impactful portfolio design for a forward-thinking creative agency.",
         tags: ["Creative", "Portfolio", "Minimalism"],
         stats: "Award-Winning Design",
