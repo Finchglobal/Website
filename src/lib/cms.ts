@@ -91,6 +91,54 @@ export const projects: Project[] = [
         tags: ["Strategy", "Branding", "Non-Profit"],
         stats: "Complete Brand Overhaul",
         url: "https://philanthroforge.com"
+    },
+    {
+        id: 6,
+        title: "NBN",
+        service: "Web Experience",
+        client: "NBN",
+        roi: "Digital Presence",
+        image: "/projects/medcore.png",
+        description: "A modern, high-performance web experience designed to captivate and convert.",
+        tags: ["Web Design", "Development", "Framer"],
+        stats: "High-Impact Launch",
+        url: "https://nbn-web.framer.website/"
+    },
+    {
+        id: 7,
+        title: "Elements Chain",
+        service: "Web3 Platform",
+        client: "Elements Chain",
+        roi: "Blockchain UI",
+        image: "/projects/fintech.png",
+        description: "Next-generation interface for decentralized, element-based blockchain interactions.",
+        tags: ["Web3", "Blockchain", "UI/UX"],
+        stats: "Seamless dApp Integration",
+        url: "https://elementschain.framer.website/"
+    },
+    {
+        id: 8,
+        title: "Cultiv-o",
+        service: "AgTech Solution",
+        client: "Cultiv-o",
+        roi: "Sustainable Growth",
+        image: "/projects/investinearthday-hero.png",
+        description: "Digital ecosystem for modern agriculture and sustainable cultivation practices.",
+        tags: ["AgTech", "Sustainability", "Platform"],
+        stats: "Market Expansion",
+        url: "https://cultiv-o.framer.website/"
+    },
+    {
+        id: 9,
+        title: "2Dots",
+        service: "Creative Studio",
+        client: "2Dots",
+        roi: "Brand Identity",
+        image: "/projects/placeholder-1.png",
+        description: "Minimalist and impactful portfolio design for a forward-thinking creative agency.",
+        tags: ["Creative", "Portfolio", "Minimalism"],
+        stats: "Award-Winning Design",
+        url: "https://2dots.framer.website/"
     }
 ];
 
