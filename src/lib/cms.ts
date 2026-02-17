@@ -79,6 +79,18 @@ export const projects: Project[] = [
         tags: ["ESG", "Finance", "Sustainability"],
         stats: "Sustainable Investment Portfolio",
         url: "https://ie.money"
+    },
+    {
+        id: 5,
+        title: "PhilanthroForge",
+        service: "Fundraising Strategy",
+        client: "PhilanthroForge",
+        roi: "Brand Launch",
+        image: "/projects/fintech.png",
+        description: "Forging the next era of fundraising with cutting-edge digital strategies and brand identity.",
+        tags: ["Strategy", "Branding", "Non-Profit"],
+        stats: "Complete Brand Overhaul",
+        url: "https://philanthroforge.com"
     }
 ];
 
@@ -110,6 +122,13 @@ export const testimonials: Testimonial[] = [
         author: "Executive Partner",
         role: "Chief Impact Officer",
         company: "IE Money",
+    },
+    {
+        id: 5,
+        quote: "Our launch was seamless and the brand reception has been phenomenal. PhilanthroForge is now positioned as a true innovator in fundraising.",
+        author: "Executive Partner",
+        role: "Director",
+        company: "PhilanthroForge",
     },
 ];
 
