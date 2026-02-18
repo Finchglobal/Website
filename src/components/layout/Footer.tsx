@@ -20,7 +20,12 @@ export function Footer() {
                             Premium digital agency delivering pixel-perfect web experiences for ambitious brands.
                         </p>
                         <div className="flex gap-4 pt-2">
-                            <Link href="#" className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors">
+                            <Link
+                                href="https://www.linkedin.com/company/finchglobalagency/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-colors"
+                            >
                                 <Linkedin className="w-4 h-4" />
                             </Link>
                         </div>
